@@ -1,23 +1,8 @@
-let num = 6-'1';
+const sum=(2+2)*6;
+console.log(sum);
 
-console.log(num)
+const hello='Маша сказала: "привіт"';
+console.log(hello);
 
-let thisIsNumber=Number('45');
-console.log(thisIsNumber);
-
-
-let booleanNumber=true;
-console.log('booleanNumber');
-
-let thisIsString=String(45);
-console.log(thisIsString);
-
-let testString=null+'';
-
-console.log(testString);
-
-let notANumber=2*'Hello';
-console.log(notANumber);
-
-let box=true;
-console.log(typeof box);
+const helloEscape='Маша сказала: \'привіт\'';
+console.log(helloEscape);
