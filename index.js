@@ -51,7 +51,16 @@ console.log(Boolean(1)); //Явне приведення до типу Boolean
 const result1=4>5; ///false
 const result2=7<9; ///true
 
+const result3='a'>'A' ///true тому що 61>41 за хекс кодом
 
+const result5='test'>'word'; ///74>77=false
+
+///Перевірка рівності чисел
+
+const result7= 3==5;
+console.log(7); //false
+
+//== - приводить операнди до одного типу данних і потім порівнює
 
 
 
