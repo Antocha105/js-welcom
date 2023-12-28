@@ -38,7 +38,18 @@ k-=2
 k*=4
 k/=5
 
+////////////////////////////
 
+//
+const a=true
+
+console.log(!a); //false
+console.log(!!a); ///повертає до true
+
+console.log(Boolean(1)); //Явне приведення до типу Boolean
+
+const result1=4>5; ///false
+const result2=7<9; ///true
 
 
 
