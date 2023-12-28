@@ -1,8 +1,27 @@
-const sum=(2+2)*6;
-console.log(sum);
+//Бінарні оператори - коли потрібно два операнди
 
-const hello='Маша сказала: "привіт"';
-console.log(hello);
+let a=2+2;
+let b=2-2;
+let c=2*2;
+let d=2/2;
 
-const helloEscape='Маша сказала: \'привіт\'';
-console.log(helloEscape);
+//Унарні оператори - коли потрібен тільки одиноперанд
+
+let e=-2
+
+// % - Залишок від цілочисельного поділу
+
+let rest= 15%6;
+console.log(rest);
+
+//**- оператор ступеню
+// Задача 2 у 9 ступеню
+
+const x3=2**9;
+console.log(x3);
+
+
+
+
+
+
