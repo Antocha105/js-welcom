@@ -1,11 +1,23 @@
-let box1="Hello"
+let num = 6-'1';
 
-let box2; //undefined
+console.log(num)
 
-box2=15; //15
+let thisIsNumber=Number('45');
+console.log(thisIsNumber);
 
-const secretWord='superSecret!Kuivstar!Cybersecuruti'
 
-console.log(secretWord);
+let booleanNumber=true;
+console.log('booleanNumber');
 
-secretWord='worrrd'; //ПЕРЕВИЗНАЧАТИ КОНСТАНТУ НЕ МОЖНА 
+let thisIsString=String(45);
+console.log(thisIsString);
+
+let testString=null+'';
+
+console.log(testString);
+
+let notANumber=2*'Hello';
+console.log(notANumber);
+
+let box=true;
+console.log(typeof box);
