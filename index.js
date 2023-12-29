@@ -56,7 +56,7 @@ if(age>=18 && hasLicense===true) {
 }else{
     console.log('Виникла помилка....');
 }
-*/
+
 
 const isWeekend = true
 const isHoliday = false
@@ -65,4 +65,13 @@ if(isWeekend===true||isHoliday===true){
     console.log('Чудовій день для відпочинку');
 }else{
     console.log('Треба працювати');
+}
+*/
+
+const number=10;
+
+if(number!==5){
+    console.log(number + ' число не дорівнює5');
+}else{
+    console.log(number + ' число дорівнює 5')
 }
