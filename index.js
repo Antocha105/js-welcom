@@ -32,7 +32,7 @@ console.log(a,b,n)
 
 
 if-else if-else
-*/
+
 
 let r=6
 let strWithR='r='+r;
@@ -42,5 +42,17 @@ if(r>12){
 }else if(r<5){
     console.log(strWithR + ' менше 5')
 }else{console.log(strWithR + ' в діапазоні між 5 і 12')};
+*/
 
+const age=10;
+const hasLicense=true;
 
+if(age>=18 && hasLicense===true) {
+    console.log('Ви можете сідаті за руль');
+}else if(age<=18) {
+    console.log('Ви не можете сідати за кермо');
+}else if(hasLicensed===false) {
+    console.log('У вас не має спеціальніх прав на керування тс');
+}else{
+    console.log('Виникла помилка....');
+}
