@@ -42,7 +42,7 @@ if(r>12){
 }else if(r<5){
     console.log(strWithR + ' менше 5')
 }else{console.log(strWithR + ' в діапазоні між 5 і 12')};
-*/
+
 
 const age=10;
 const hasLicense=true;
@@ -55,4 +55,14 @@ if(age>=18 && hasLicense===true) {
     console.log('У вас не має спеціальніх прав на керування тс');
 }else{
     console.log('Виникла помилка....');
+}
+*/
+
+const isWeekend = true
+const isHoliday = false
+
+if(isWeekend===true||isHoliday===true){
+    console.log('Чудовій день для відпочинку');
+}else{
+    console.log('Треба працювати');
 }
