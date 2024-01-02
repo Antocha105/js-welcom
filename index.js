@@ -129,6 +129,7 @@ if(m>=n && k>=n){
 }
 */
 
+/*
 const age=5;
 const hasDiscount=true;
 
@@ -149,3 +150,36 @@ if(age<0 || typeof age !=='number'){
 if(ticketPrice !==undefined){
     console.log('Вартість квитка складає:' + ticketPrice +'$')
 }
+*/
+/*
+
+let firstOperand=prompt( 'Ведіть перше число');
+let secondOperand=prompt('Введіть друге число')
+
+
+//console.log(firstOperand*secondOperand);*/
+/*
+let result=firstOperand+secondOperand;
+
+if( Number.isNaN(result)===true){
+    console.log('Ти не правий, введи число');
+}else{console.log(result);
+}
+
+*/
+
+/*
+Функції
+Задача: написати функцію яка буде приймати імʼя користувача: строка і буде вітатися з цим користувачем
+
+*/
+function greetingUser(userName){
+    console.log('Привіт,'+ userName);
+}
+
+greetingUser('Alex');
+greetingUser('John'); 
+greetingUser('Solar'); 
+
+
+
