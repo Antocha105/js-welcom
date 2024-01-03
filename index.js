@@ -1,33 +1,53 @@
+
 /*
-const num1=Number(prompt('введіть перше число: '));
-const num2=Number(prompt('введіть друге число: '));
+const number = prompt ('Введіть число: ')
 
-
-function addTwoNumbers(arg1,arg2){
-    const result=arg1+arg2;
-    return result;
+if( number % 5 === 0){
+    console.log(number + ' ділиться на 5');
+}
+else if( number % 3 === 0){
+    console.log(number + ' ділиться на 3');
+}
+else if( number % 2 === 0){
+    console.log(number + ' ділиться на 2')
+}else{
+    console.log(number + 'Не ділиться на 5 на 3 на 2')
 }
 
-let result = addTwoNumbers(num1,num2);
-console.log(result);
 */
 
-//Задача: реалізувати обмеження для осіб до 18років
+const monthNumber=3;
 
-/*
-const age=30;
-const isAdult = age <18? 'not adult': 'adult'
-
-console.log(isAdult);
-*/
-/*
-const isAuth=false;
-
-const vievMode = isAuth === true ? 'autMode' : isAuth ===false ? 'unauth';
-*/
-
-const Number=5;
-
-const result=(Number>=6 && Number<=12) ? 'in' : 'out'
-
-console.log(result);
+switch (monthNumber) {
+    case 1:
+    case 2:
+    case 12:{
+        console.log('Зима');
+        break;
+    }
+    case 3:
+    case 4:
+    case 5:
+        {
+        console.log('Весна');
+        break;
+    }
+    case 6:
+    case 7: 
+    case 8:
+        {
+        console.log('Літо');
+        break
+    }
+    case 9:
+    case 10:
+    case 11:
+        {
+        console.log('Осінь');
+        break
+    }
+        default:{
+        console.log('Введіть число від 1 до 12');
+        break;
+    }
+}
