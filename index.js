@@ -14,7 +14,20 @@ console.log(result);
 
 //Задача: реалізувати обмеження для осіб до 18років
 
+/*
 const age=30;
 const isAdult = age <18? 'not adult': 'adult'
 
-console.log(isAdult)
+console.log(isAdult);
+*/
+/*
+const isAuth=false;
+
+const vievMode = isAuth === true ? 'autMode' : isAuth ===false ? 'unauth';
+*/
+
+const Number=5;
+
+const result=(Number>=6 && Number<=12) ? 'in' : 'out'
+
+console.log(result);
