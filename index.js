@@ -173,6 +173,7 @@ if( Number.isNaN(result)===true){
 Задача: написати функцію яка буде приймати імʼя користувача: строка і буде вітатися з цим користувачем
 
 */
+/*
 function greetingUser(userName){
     console.log('Привіт,'+ userName);
 }
@@ -181,5 +182,69 @@ greetingUser('Alex');
 greetingUser('John'); 
 greetingUser('Solar'); 
 
+*/
+/*
+function addFiveToNumber(number) {
+    let result=number+5;
+    console.log(result);
 
+    
+}
 
+addFiveToNumber(5);
+*/
+/*
+function addTwoNumbers(num1, num2) {
+    const result = num1+num2;
+    return result;
+
+}
+
+addTwoNumbers(2,5);
+console.log(addTwoNumbers);
+*/
+
+/*Задача1.Написати функцію яка приймає два числа і повертає те що більше
+
+*/
+/*
+const value1=Number(prompt('введіть перше число: '));
+const value2=Number(prompt('введіть друге число: '));
+
+function getBigger(number1,number2) {
+    if (typeof number1 !=='number' || typeof number2 !=='number') {
+        console.log('Ми очікуємо числа!');
+    }else if(number1>number2){
+        return number1;
+    }else{
+        return number2;
+    }
+}
+
+const result = getBigger(value1, value2);
+console.log(result);
+*/
+
+/*Задача 2. Написати функцію яка обчтслює середнє арифметичне с двох чисел */
+
+/*
+ function average(number1, number2) {
+    return(number1+number2)/2;
+
+ }
+ console.log(average(value1,value2));
+*/
+
+/* 
+Задача 3. Написати функцію яка приймає число і визначає його парність
+*/
+
+function isEven(number){
+    if(number % 2 === 0){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+console.log(isEven(5))
