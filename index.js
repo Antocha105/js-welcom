@@ -1,53 +1,104 @@
 
 /*
-const number = prompt ('Введіть число: ')
 
-if( number % 5 === 0){
-    console.log(number + ' ділиться на 5');
-}
-else if( number % 3 === 0){
-    console.log(number + ' ділиться на 3');
-}
-else if( number % 2 === 0){
-    console.log(number + ' ділиться на 2')
-}else{
-    console.log(number + 'Не ділиться на 5 на 3 на 2')
+function calculator(num1,num2, functionLink) {
+    let result = functionLink(num1,num2)
+    return result;
 }
 
+console.log(calculator(5,5, multy));
+
+function sum(a,b) {
+    return a+b;
+}
 */
 
-const monthNumber=3;
+/*
+Розробити алгоритм який буде відображети режим нашого дня
 
-switch (monthNumber) {
-    case 1:
-    case 2:
-    case 12:{
-        console.log('Зима');
+Потрібна функція яка приймає ту чи іншу пору дня і виконує ті чи інші дії
+*/
+
+function todo(timeOfDay){ //HOF
+    //morning - Список справ на ранок
+    //lunch - Список справ на обід
+    // evening - Список справ на вечір
+
+    switch(timeOfDay){
+        case 'morning':{
+            washingFace();
+            brushingTeeth();
+            skinCare();
+            breakFast();
+            break;
+    }
+    case 'lunch':{
+        goToOffice();
+        coding();
+        lunch();
+        coding();
         break;
+
     }
-    case 3:
-    case 4:
-    case 5:
-        {
-        console.log('Весна');
+    case 'evening':{
+        education();
+        coding();
+        goToHome();
+        shower();
+        brushingTeeth();
+        skinCare();
+        sleep();
         break;
+
     }
-    case 6:
-    case 7: 
-    case 8:
-        {
-        console.log('Літо');
-        break
+    default: {
+        console.log('Такої пори дня непередбачено')
     }
-    case 9:
-    case 10:
-    case 11:
-        {
-        console.log('Осінь');
-        break
-    }
-        default:{
-        console.log('Введіть число від 1 до 12');
-        break;
-    }
+}
+}
+
+todo('evening');
+
+function washingFace(){
+    console.log('washing face');
+}
+
+function brushingTeeth(){
+    console.log('brushing teeth');
+}
+
+function skinCare(){
+    console.log('skin care');
+}
+
+function breakFast(){
+    console.log('breakfast');
+}
+
+function goToOffice(){
+    console.log('go to offise');
+}
+
+function coding(){
+    console.log('coding');
+}
+
+function lunch(){
+    console.log('lunch');
+}
+
+function education(){
+    console.log('education');
+}
+
+function goToHome(){
+    console.log('Go to home');
+}
+
+function shower(){
+    console.log('shower');
+}
+
+function sleep(){
+    console.log('sleep');
 }
