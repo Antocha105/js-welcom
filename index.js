@@ -50,39 +50,27 @@ const cat = { //Літеральне створення обʼєкта
 const cat2 = Object(); // Функція конструктор
 
 const cat3 = new Object(); // Функція конструктор з оператором new
+
+Конструктор візначає шаблон або склет обʼєктів які будуть створюватися
+
+Угоди у фукціях конструкторах:
+1.Імʼя функції має починатися з великої букви
+2.Повінна вікористовуватися лише за допомогою оператора NEW
 */
 
-const cat={
-    name: 'Murzik',
-    color: 'red',
-    breed: 'Dvorovyi',
-    age: 2,
-    eat: function(){
-        return 'I am eating'
-    },
-    sleep: function(){
-        return 'I am sleeping'
+//Написати функцію конструктор для створення кота
+function Cat(name,breed,age){
+    this.name = name; //Посилання на ось цьго новоствореного кота
+    this.color = color;
+    this.breed = breed;
+    this.age = age;
+    this.run = function(){
+        return this.name + ' is runing';
     }
-}
-console.log(cat.age) //2
-
-cat.age = cat.age + 1;
-
-console.log(cat.age) //3
-
-cat.sleep = undefined; //Bad practice
-
-delete cat.sleep; //GOOD PRACTICE
-
-
-//Додавання властивостей 
-
-//Задача: додати в обʼєкт Мурзика імʼя його друга
-
-cat.friend = 'Tuzik'
-
-cat['favorit food'] = 'fish';
-cat.maow = function {
-    return 'maow'
 
 }
+
+//створити декілька котів, за допомогою нашої функції
+
+const cat1 = new Cat ('Bublik', 'red', 'Dvorovyi', '3');
+const cat2 = new Cat ('Murzik', 'black', 'Siam', '4');
