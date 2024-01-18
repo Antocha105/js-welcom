@@ -1,98 +1,72 @@
 /*
-Обєкти
 
-const назва обєкту{
-    ключ: значення
-}
+Розробка програми для керування книжковим магазином
 
-Обєкти мають властивості і методі
+Предметна область: В книжковому магазині у нас буде багато книг. ми їх продаємо
 
+створити конструктор обʼєктів для представлення книг з наступними властивостями.
+Назва, Автор, Рік видання, ціна
 
-
-const obj = {
-    color: 'white',
-    fontSize: 2
-}
-
-//ООП - Парадигма програмування, яка дозволяє створити програми з  використанням обʼєктів, які маютьвластивості і методи.
-
-const bulb = {
-    lightness: 200,
-    power: '200W',
-    cap: 'small',
-    on: function(){
-        return 'The light ON!'
-    },
-    off: function(){
-        return 'The light OFF!'
-    }
-
-}
-
-console.log(bulb.lightness)
+Спроектувати методи для отримання і встановлення значень цих властивостей
 
 
-
-const dog ={
-    name: 'Tuzik',
-    'favorit Food': 'meat'
-}
-console.log(dog.name)
-console.log(dog["favorit Food"])
-
+Задача 2: Зробити для всіх книг метод який буде повертати ціну зі знижкою
 */
 
-// Способі створення обьекта
-/*
-const cat = { //Літеральне створення обʼєкта
-
+function Book(title, author, year,price){
+    this.title = title;
+    this.author = author;
+    this.year = year;
+    this.price = price;
 }
-const cat2 = Object(); // Функція конструктор
 
-const cat3 = new Object(); // Функція конструктор з оператором new
+this.getTitle = function() {
+    return this.title;
+}
 
-Конструктор візначає шаблон або склет обʼєктів які будуть створюватися
-
-Угоди у фукціях конструкторах:
-1.Імʼя функції має починатися з великої букви
-2.Повінна вікористовуватися лише за допомогою оператора NEW
-*/
-
-//Написати функцію конструктор для створення кота
-function Cat(name,color,breed,age){
-    this.name = name; //Посилання на ось цьго новоствореного кота
-    this.color = color;
-    this.breed = breed;
-    this.age = age;
-    this.run = function(){
-        return this.name + ' is runing';
-    }
+this.getAuthor = function(){
+    return this.Author;
 
 }
 
-//створити декілька котів, за допомогою нашої функції
-
-const cat1 = new Cat ('Bublik', 'red', 'Dvorovyi', '3');
-const cat2 = new Cat ('Murzik', 'black', 'Siam', '4');
-
-/*
-створіть функцію-конструктор собаки в якої буде імʼя колір вік
-
-Зробіть декілька собак
-*/
-function Dog(name,color,age){
-    this.name = name;
-    this.color = color;
-    this.age = age;
-    this.gav = function(){
-        return 'gav-gav-gav'
-    }
+this.getYear = function(){
+    return this.getYear;
 }
 
-const dog1 = new Dog('Tuzik','black',1)
-const dog2 = new Dog('Knopa','white',3)
-const dog3 = new Dog('Liem','black',2)
+this.getPrice = function(){
+    return this.Price
+}
 
 
 
+this.setTitle = function(newTitle){
+    this.title = newTitle;
+}
 
+this.setAuthor = function(newAuthor){
+    //Реалізувати якісь перевірки
+
+    this.author = newAuthor;
+}
+
+this.setYear = function(newYear){
+    //Реалізувати якісь перевірки
+    this.year = newYear;
+}
+this.setPrice = function(newPrice){
+    //Реалізувати якісь перевірки
+    this.price = newPrice;
+}
+
+const book1 = new Book('Чотири вітри','Крістін Генна',2020,450)
+
+//book1.setTitle('New Title')
+//book1.setAuthor('New Author')
+//book1.setYear('2025')
+//book1.setPrice('New Price')
+
+this.calculateDiscountedPrice = function(discountPercentage){
+
+    const discountedPrice = this.price - (this.price * (discountPercentage/100));
+    return discountedPrice
+}
