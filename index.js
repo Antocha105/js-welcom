@@ -59,7 +59,7 @@ const cat3 = new Object(); // Функція конструктор з опер�
 */
 
 //Написати функцію конструктор для створення кота
-function Cat(name,breed,age){
+function Cat(name,color,breed,age){
     this.name = name; //Посилання на ось цьго новоствореного кота
     this.color = color;
     this.breed = breed;
@@ -74,3 +74,25 @@ function Cat(name,breed,age){
 
 const cat1 = new Cat ('Bublik', 'red', 'Dvorovyi', '3');
 const cat2 = new Cat ('Murzik', 'black', 'Siam', '4');
+
+/*
+створіть функцію-конструктор собаки в якої буде імʼя колір вік
+
+Зробіть декілька собак
+*/
+function Dog(name,color,age){
+    this.name = name;
+    this.color = color;
+    this.age = age;
+    this.gav = function(){
+        return 'gav-gav-gav'
+    }
+}
+
+const dog1 = new Dog('Tuzik','black',1)
+const dog2 = new Dog('Knopa','white',3)
+const dog3 = new Dog('Liem','black',2)
+
+
+
+
