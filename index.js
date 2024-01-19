@@ -12,7 +12,7 @@
 
 Задача 2: Зробити для всіх книг метод який буде повертати ціну зі знижкою
 */
-
+/*
 function Book(title, author, year,price){
     this.title = title;
     this.author = author;
@@ -70,3 +70,73 @@ this.calculateDiscountedPrice = function(discountPercentage){
     const discountedPrice = this.price - (this.price * (discountPercentage/100));
     return discountedPrice
 }
+*/
+
+
+/*
+
+Зробити функцію конструктор яка приймає в якості аргументів:
+- назва країні
+- Популяція
+- площа
+спроЕктувати метод густоти населення
+*/
+/*
+function Country(name,population,area){
+    this.name = name;
+    this.population = population;
+    this.area = area;
+
+    this.getDensity = function(){
+        return this.population/this.area
+
+    }
+}
+
+let country1 = new Country('Ukraina',44000000,603000)
+*/
+
+/*
+Зробити функцію конструктор авто яке має:
+- назву
+- максимальну швидкість
+- поточну швідкість
+Спроектувати методи:
+- Метод прискорення (акселерейт) - приймає в якості аргументапевне прискорення
+- метод сповільнення - приймае в якості аргумента певне сповільнення
+
+
+
+
+
+*/
+
+function Auto(name,maxSpeed){
+    this.name = name;
+    this.maxSpeeed = maxSpeed;
+    this.speed = 0;
+
+    this.accelerate = function(accelValue){
+        this.speed = this.speed + accelValue;
+        if(this.speed > this.maxSpeed){
+            return this.maxSpeed
+        }
+        return this.speed;
+    }
+
+    this.deaccelerate = function(deaccelValue){
+        this.speed = this.speed - deaccelValue;
+        if(this.speed<0){
+            this.speed = 0;
+        }
+        return this.speed
+    }
+
+    this.stop = function(){
+        this.stop = 0;
+        return this.speed;
+    }
+
+}
+
+const auto1 = new Auto('Audi', 300)
