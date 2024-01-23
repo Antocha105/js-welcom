@@ -1,159 +1,76 @@
 /*
-
-// [] - Обчислювальні властивості
-
-const user = {
-    name: 'John' ,// Ключ  'name'  значення 'john'
-    'favorite color':'red',
-    0: 'value'
-}
-
-// Ключем в обʼєкті може бути рядок або тип данних Sumbol
-
-console.log(user.name)
-
-// . - Оператор доступу за імʼям властивості(коли мова йде про валідні ідентифікатори)
-
-//user.'favorite color'; --> SyntaxError
-//user.0; --> SyntaxError
-
-//  [] - оператор доступу до обчислювальної властивості(коли мова йде про невалідні ідентифікатори)
-
-console.log(user['favorite color'])
-
-console.log(user[0])
-
-const someObj = {
-    2:10
-}
-
-console.log(someObj[2])
-
-console.log(someObj['2'])
-
-/*
-Задача 
-*/
-/*
-const greets={
-    15:'Hi',
-    17:'Ya, whats up',
-    19:'Hello',
-    30:'Good morning'
-}
-
-const valueFromUser = 19
-
-console.log(greets[19])
-console.log(greets[valueFromUser])
+Масив це особливи
 */
 
-/*
-задача у нас є обьект ключем у якого є день тижня а значення - плани на цей день.
+const userTelephone1 = '380990973453'
+const userTelephone2 = '380990989051'
+const userTelephone3 = '380990876451'
 
-Прийняти від користувача через промпт назву дня тижня і видати алерт що заплановано у користувача на цей день
-*/
-/*
-const obj={
-    Mon:'drive lesson',
-    Tue:'dantist visit',
-    Wed:'go to party',
-    Thu:'hard work',
-    fri:'chill',
-    sat:'go to park',
-    'favorite color':'white',
-    0:'value'
+const userTelephones = {
+    0: 38099097345,
+    1: 380990989051,
+    2: 380990989051
 
 }
-*/
-//const userValue = prompt('Enter day week')
-//alert(obj[userValue])
+//Оголошення масиву
+//Литеральній спосіб
+const arr1 = [2,4,6,7]
 
-/*
-Оператор in. Бінарний оператор. використовується для перевірки наявності властивості ключа(повертатиме тру або фалсе)
-*/
 
-//console.log('Mon' in obj)
-/*
-function greeting(user){
-    return `Hello ${'name' in user ? user.name : 'Anonym'}`
+const arr2 = new Array(2,4,6,7)
 
+arr[0]//зчитування значення
+arr[0]=200 //присвоєння нового значення для елементів масиву
+
+
+// Задача вивести всі значення масиву в консоль
+
+for(let i=0; i<arr.lenght; i++){
+    console.log(arr(i))
 }
 
-const user = {
-    name: 'John',
-    email:'john.doe@gmail.com'
-}
-*/
+//вивести на консоль тільки парні числа масиву
 
-const user = {
-    name:'John',
-    lastname:'Doe',
-    age:20,
-    'favorite color': 'red',
-    movie: 'Blue moon',
-    avatar:'http://....'
-}
+const numbersArray = [1,2,3,4,5,6,7,8,9,10]
 
-// for..in - цикл шо використовуеться для перебору ключив в обʼєкті
-
-/*
-for(variable in object){
-    код шо використовуеться для кожної властивості
-}
-
-varible - змінна яка буде приймати значення ключів властивостей
-object - об'єкт, властивості(ключі) якого мі хочемо перебрати
-*/
-/*
-for(let key in user){
-    console.log(`${key}--->${user[key]}`) //key --->value
-}
-
-*/
-/*
-Задача: Написати функцію яка приймає обʼєкт і виводить всі значення всіх властивостей оформлені *....*
-а ключі "..." 
-*/
-/*
-const obj = {
-    key1: `value 1`
-}
-
-function stylingObject(obj){
-    for (let key in obj){
-        console.log(`"${key}":*${obj[key]}*`)
+for (let i = 0; i<numbersArray.lenght; i++){
+    if(numbersArray[i]%2 ===2){
+        console.log(numbersArray[i])
     }
 }
-*/
 /*
+Задача дано масив чисел
+Напишіть функцію яка приймає масив в якості аргументу і повертає сумму всіх елементів масиву
 
-Задача: у нас є обьект з зарплатами по всім відділам.
-Написати функцію яка повертає загальну сумму всіх відділів
+
 */
-const departmentSalaryInCompany1 = {
-    HR: 120000,
-    development:5000000,
-    PR: 50000,
-    marketing: 120000,
-    assistant: undefined
+const arr = [1,2,3,4,5,6,7,8,9]
+function sumOfElementsArr(arr){
+    let res = 0;
+
+    for(let i=0; i<arr.lenght; i++){
+        res+=arr(i); //res = res + arr[i]
+    }
+    return res;
+
 }
 
-const departmentSalaryInCompany2 = {
-    HR: 130000,
-    development:5500000,
-    PR: 50000,
-    marketing: 120000,
-    assistant: undefined
-}
-//
-function sumSalary(salaryObject){
-    let sum = 0;
+console.log(sumOfElementsArr(numArr))
 
-    for(let key in salaryObject){
-        if(typeof salaryObject[key]==='number'){
-        sum += salaryObject[key];
+/*
+Задача 2 Написати функцію яка знаходить найбільше значення серед елементів масиву
+*/
+
+function maxArray(array){
+    let maxNumber = array[0];
+    for (let i =0; i<array.lenght; i++){
+        if(array[i]>maxNumber){
+            max = array[i]
         }
     }
-    return sum;
+    return maxNumber;
 }
+
+console.log(maxArray(numbersArray))
+
+
