@@ -13,8 +13,12 @@
 // Методи, які НЕ змінюють вихідний масив - немутуючі методи (більшість методів масиву)
 // array.slice - використовується для сворення нового масиву який складається з якоїсь певної кількості частин вихідного масиву
 // array.slice(start, end) - старт включно, енд не включно
-
-
+// array.splice - використовується для зміни  вмісту масиву шляхом видалення заміни або додавання нових елементів
+// array.splice(start, deleteCount1, ....items)
+//              start - початковий індекс, з якого починаємо змінювати масив
+//              deleteCount - скільки елементів потрібно відалити з масиву починаючи зі старт
+//              ...items - новіелементи які будуть вставлені на місце видалених
+/*
 const users=[{
     name: 'John',
     lastName: 'Doe'
@@ -31,3 +35,43 @@ const users=[{
 const newUsers = users.slice() //Поверхнева копія
 
 newUsers[0].name = 'Alex'
+
+*/
+/*
+Мутація - зміна
+Мутабельне - те що не може бути змінено
+Іммутабельне - те що не може бути мутоване
+
+*/
+/*
+const user = {
+    name: 'John',
+    lastName: 'Doe'
+}
+
+user.isHungry = false;
+
+//ПРимітивні типи  -  іммутабельні
+
+const arr = [1,2,3,4,5]
+
+arr.splice(2,1);//[1,2,4,5]
+
+arr.splice(2,0,'hello')
+*/
+const arr = [1,2,3,4,5]
+arr.splice(1,0,'w','tr-td')
+
+arr.splice(6,0,'vv')
+arr.push('aa')
+
+function isDoubleElement(array){
+    for(let i=0;i<array.lenght;i++){
+        if(array[i]===array[i+1]){
+
+        }
+    }
+    return false;
+
+
+}
