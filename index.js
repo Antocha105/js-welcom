@@ -1,77 +1,122 @@
-// array.concat - використовується для об'єднання двох або більше масивів у новий масив (немутуючий)
-// array.fill - використовується для заповнення всіх елементів масиву якимсь одним значенням (мутуючий)
-// array.includes - використовується для перевірки наявності певного значення у масиві (немутуючий)
-// array.indexOf - використовується для отримання першого входження певного значення у масиві (немутуючий)
-// array.join - використовується для створення рядка, об'єднуючи всі елементи масиву (немутуючий)
-// array.push - використовується для додавання одного або кількох елементів у кінець (мутуючий)
-// array.pop - використовується для видалення останнього елементу (мутуючий
-// array.shift - використовується для видалення першого елементу з початку масиву (мутуючий)
-// array.unshift - використовується для додавання одного або декількох елементів на початок масиву (мутуючий)
-// array.unshift(element1, element2, ..., elementN)
-// array.reverse - використовується для зміни порядку елементів у масиві на протилежний (мутуючий)
-// Методи, які змінюють вихідний масив - мутуючі методи
-// Методи, які НЕ змінюють вихідний масив - немутуючі методи (більшість методів масиву)
-// array.slice - використовується для сворення нового масиву який складається з якоїсь певної кількості частин вихідного масиву
-// array.slice(start, end) - старт включно, енд не включно
-// array.splice - використовується для зміни  вмісту масиву шляхом видалення заміни або додавання нових елементів
-// array.splice(start, deleteCount1, ....items)
-//              start - початковий індекс, з якого починаємо змінювати масив
-//              deleteCount - скільки елементів потрібно відалити з масиву починаючи зі старт
-//              ...items - новіелементи які будуть вставлені на місце видалених
 /*
-const users=[{
-    name: 'John',
-    lastName: 'Doe'
-},{
-    name: 'Jane',
-    lastName: 'Doe'
-},{
-    name: 'Jack',
-    lastName: 'Dosh'
+function saySomething (howToSay,whatToSay){
+    howToSay(whatToSay)
+}
+//saySomething(alert,'Hello user')
+//saySomething(cosole.log,'Hiiii!')
+
+//HOF - Hight Orrder Function
+
+/*
+callback - Функція зворотнььго виклику
+*/
+
+//array.forEach - використовуеться для перебору кожного елементу масиву і виконання певної дії
+//array.forEach(Callback)
+/*
+const array = [1,2,3,4,5]
+function square(a){
+    console.log(a*a)
+}
+array.forEach(square)
+
+//Еквівалент
+for(let i = 0;i<array.length; i++){
+    square(array[i])
 }
 
-]
+array.forEach(item,index,array =>{
+    console.log(item*item)
+})
 
-const newUsers = users.slice() //Поверхнева копія
+const square =(num)=>num*num
 
-newUsers[0].name = 'Alex'
 
-*/
-/*
-Мутація - зміна
-Мутабельне - те що не може бути змінено
-Іммутабельне - те що не може бути мутоване
+//array.map - працює як forEach, тільки повертатиме новій масив
 
-*/
-/*
-const user = {
-    name: 'John',
-    lastName: 'Doe'
+function square(a){
+    return a*a
 }
 
-user.isHungry = false;
 
-//ПРимітивні типи  -  іммутабельні
 
-const arr = [1,2,3,4,5]
-
-arr.splice(2,1);//[1,2,4,5]
-
-arr.splice(2,0,'hello')
+const newArray = array.map((square) => {
+    return item*item
+})
 */
-const arr = [1,2,3,4,5]
-arr.splice(1,0,'w','tr-td')
+// коли ми використовуємо мап, в такому випадку значення яке ві повертаєте з ретерн з колбеку воно і буде входити в результуючий масив
 
-arr.splice(6,0,'vv')
-arr.push('aa')
 
-function isDoubleElement(array){
-    for(let i=0;i<array.lenght;i++){
-        if(array[i]===array[i+1]){
+// 
+/*
+const users = [{
+    name:'John',
+    lastname:'Doe',
+    age: 19,
+    email:'john.doe@gmail.com'
+},{
+    name:'Jane',
+    lastname:'Doe',
+    age: 22,
+    email:'jane.doe@gmail.com'
+},{
+    name:'Jackson',
+    lastname:'Doe',
+    age: 55,
+    email:'jackson.doe@gmail.com'
+}]
+*/
+//Збільшити вік користувачів на 1
 
-        }
+//Variant 1
+/*
+function plusOneYear(item){
+    item. age+=1
+}
+users.forEach(plusOneYear)
+//Variant 2
+users.forEach((item) => item.age +=1)
+console.log(users)
+
+/*
+Задача 2. зробити новій масив +100
+
+*/
+
+const array = [2,44,11,234,8,2,4,1]
+
+const newArray = array.map((item) =>  item+100)
+
+/*Задача 3. На основі масиву обьєктів потрібно створити новій масив користувачів, обьекти мать бути у такому вигляді
+
+{
+    fullname:''
+    emeil:''
+}
+
+*/
+const users = [{
+    name:'John',
+    lastname:'Doe',
+    age: 19,
+    email:'john.doe@gmail.com'
+},{
+    name:'Jane',
+    lastname:'Doe',
+    age: 22,
+    email:'jane.doe@gmail.com'
+},{
+    name:'Jackson',
+    lastname:'Doe',
+    age: 55,
+    email:'jackson.doe@gmail.com'
+}]
+
+function newUserObject(user){
+    return{
+        fullName:`${user.name} ${user.lastname}`,
+        email: user.email
     }
-    return false;
-
-
 }
+
+const newUsers = users.map(newUserObject)
