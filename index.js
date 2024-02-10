@@ -1,97 +1,64 @@
-'use strict';
-
-Вкладені цикли (Double Loop)
-// Типи даних
-
 /*
-Вивести на консоль таблицю множення від 1 до 5
-// 7 примітивних типів даних: Number, String, Bigint, Boolean, null, undefined, Symbol
-// 1 об'єкт
+Написати функцію якаробить кожну першу літеру у слові  великою
+*/
+function capitalizeWords(str){
+    let word = str.split(' ')
 
-1x1 = 1
-1x2 = 2
-....1x5 = 5
-// Примітивні типи даних вони копіюються завжди за значенням і не мають властивостей та методів
-// Об'єкти можуть мати властивості та методи і вони завжди копіюються за посиланням
+    for(let i=0;i<words.lenght; i++){
+        console.log(words[i].charAt(0).toUpperCase()+words[i].slice(1))
+    }
+    return words.join(' ') 
 
-2x1 = 2
-2x2 = 4
-
-....
-// String
-// string.length - довжина рядка
-// string.toUpperCase - приводить строку у верхній регістр
-// string.toLowerCase - приводить строку у нижній регістр
-// string.charAt - використовується для повернення символу з рядка за вказаним індексом
-// string.charCodeAt - використовується для повернення кодової точки Unicode символу з рядка за вказаним індексом
-// string.concat - використовується для об'єднання (кокнатенації) двох або більше рядків і повертає новий рядок
-// string.includes - використовується для перевірки, чи міститься певний підрядок у заданому рядку
-// string.indexOf - використовується для отримання першого входження підрядка в рядку
-// string.repeat - використовується для повторення рядка задану кількість разів і повертає новий рядок, який складається з повторень вихідного рядка
-// string.replace - використовується для заміни частини рядка іншим рядком або регулярним виразом
-// string.slice - використовується для вибору частини рядка за допомогою вказаних індексів
-// string.trim - використовується для видалення пробілів з початку і кінця рядка
-// string.split - використовується для розбивки вихідного рядка на підрядки, використовуючи роздільник (separator) як точку розриву і повертає масив, що складається з цих підрядків
-
-5x1 = 5
-5x2 = 10
-5x3
-5x4
-5x5
-const str = 'abracadabra';
-for(let i = 0; i < str.length; i++) { // приклад проходу циклом по рядку
-  console.log(str[i]);
 }
 
-// Boolean
-// boolean.toString - приведення булевого типу до строки (не мутуючий)
-const bool = true;
-console.log(bool.toString());
+capitalizeWords('word flower third')
+
+
+/* Задача 1
+Написати функцію checkSpam, яка повертає true, якщо переданий рядок містить слова 'xxx' або 'viagra'
+Якщо заборонених слів у рядку немає - повертається false
+
+
+checkSpam('buy ViAgRa now'); // true
+checkSpam('free xxxxxxx'); // true
+checkSpam('innocent rabbit'); // false
 
 */
-// null/undefined - вони не мають об'єктів обгорток
 
-// for(let i = 1; i <= 5; i++) { // 1 - число, для якого ми виводимо таблицю множення
-//   for(let j=1; j <= 5; j++) { // 1*1, 1*2, 1*3, 1*4, 1*5 - числа, на які ми множимо число з зовнішнього циклу
-//     console.log(`${i} x ${j} = ${i*j}`);
-//   }
-// }
-// console.log(undefined.test); // Помилка!
 
-const numbers = [[1, 1, 1], [1, 1, 1], [1, 1, 1]];
-// Number
-// number.isInteger - використовується для перевірки, чи є передане значення цілим числом
-// number.isNaN - використовується для перевірки значення на NaN
+function checkSpam(str){
+    const lowStr=str.toLowerCase
+    const result = lowstr.includes('viagra') || lowStr.includes('xxx')
 
-// Задача: знайти суму елементів масиву numbers
-// number.toFixed - використовується для отримання (!) рядкового представлення числа з потрібною кількістю знаків після десяткової коми
-// 15.1 , 15.2 , 15.3 , 15.4 --> 15
-// 15.5, 15.6 , 15.7, 15.8, 15.9 --> 16
-
-let sum = 0;
-for(let i = 0; i < numbers.length; i++) { // зовнішній цикл контролює масив, який ми переглдаємо
-  for(let j = 0; j < numbers[i].length; j++) { // внутрішній цикл сумує всі елементи поточного просматріваемого вкладеного масиву
-    sum += numbers[i][j]; // отримуємо доступ до поточного елементу просматріваемого вкладеного масиву
-  }
 }
 
-console.log(sum);
+console.log(checkSpam('buy Viagra now'))
+console.log(checkSpam('free xxxxxxx'))
+console.log(checkSpam('innocent rabbit'))
 
-// Приклади
+//Variant 2
 
-// Приклад 1: Дано номер телефону. Додати частку "+38"
+function checkSpam(str){
+    const spamArray = ['viagra','xxx','drugs'];
 
-let number = '0994875717';
+    for(let i=0; i<spamArray.length; i++){
+        if(str.toLowerCase().includes(spamArray[i])===true){
+            return true;
+        }
+    }
+    return false;
+}
 
-const arrayFromNumber = Array.from(number);
-arrayFromNumber.unshift('+', '3', '8');
+/*
+Написати функцію, яка перевіряє, чи є переданий їй рядок - паліндромом. не зважаючи на регістр
+Паліндром - це коли рядок з обох сторін читається однаково
+Anna - паліндром
+Mama - не паліндром
+Namman - паліндром
+*/
 
-number = arrayFromNumber.join('');
-
-// Приклад 2: Дано рядок, перевернути його
-
-let word = 'table';
-
-word = Array.from(word).reverse().join('');
-
-
+function checkPalindrom(str){
+    const originalStr = str.toLowerCase();
+    const reversedStr = originalStr.split('').reverse().join('');
+    return originalStr === reversedStr;
+}
