@@ -1,64 +1,84 @@
+const date = new date(); // За замовчення м буде створена поточна дата та час
+
+
+
+
+const date = new Date(); // за замовченням буде створена поточна системна дата та час
+const date1 = new Date('12-31-2023'); // 31.12.2024
 /*
-Написати функцію якаробить кожну першу літеру у слові  великою
-*/
-function capitalizeWords(str){
-    let word = str.split(' ')
-
-    for(let i=0;i<words.lenght; i++){
-        console.log(words[i].charAt(0).toUpperCase()+words[i].slice(1))
-    }
-    return words.join(' ') 
-
-}
-
-capitalizeWords('word flower third')
-
-
-/* Задача 1
-Написати функцію checkSpam, яка повертає true, якщо переданий рядок містить слова 'xxx' або 'viagra'
-Якщо заборонених слів у рядку немає - повертається false
-
-
-checkSpam('buy ViAgRa now'); // true
-checkSpam('free xxxxxxx'); // true
-checkSpam('innocent rabbit'); // false
-
+Задача: написати функцію, яка зводить число у певну ступінь і приймає 2 аргументи:
+- число, яке потрібно звести у ступінь    -- x
+- ступінь, у яку потрібно звести число    -- n
 */
 
+console.log(date1.getDate()); // 31; getDate - використовується для отримання дня місяця з дати
+console.log(date1.getDay()); // 0; getDay - використовується для отримання дня тижня з дати (0 - неділя ... 6 - субота)
+console.log(date1.getFullYear()); // 2023; getFullYear - використовується для отримання року з дати
+console.log(date.getHours()); // getHours - використовується для отримання години з дати
+console.log(date1.getTime()); // getTime - використовується для отримання кількості мілісекунд, які пройшли з 1 січня 1970 року 00:00:00
+// Ітеративне мислення: цикл for
 
-function checkSpam(str){
-    const lowStr=str.toLowerCase
-    const result = lowstr.includes('viagra') || lowStr.includes('xxx')
+// Задача: знайти суму першого 1000000 чисел
+function pow(x, n) {
+  let result = 1; // змінна у якій ми будемо накопичувати добуток
 
+let sum = 0; // 1. Створюємо змінну
+  // множимо result на x , n разів у циклі
+  for(let i = 0; i < n; i++) {
+    result *= x;
+  }
+
+const time1 = new Date(); // відрізок часу ДО початку операції 2
+  return result;
 }
 
-console.log(checkSpam('buy Viagra now'))
-console.log(checkSpam('free xxxxxxx'))
-console.log(checkSpam('innocent rabbit'))
+console.log(pow(2, 3)); // 8
 
-//Variant 2
+// Рекурсивне мислення: спрощуємо собі завдання і викликаємо функцією саму себе
 
-function checkSpam(str){
-    const spamArray = ['viagra','xxx','drugs'];
-
-    for(let i=0; i<spamArray.length; i++){
-        if(str.toLowerCase().includes(spamArray[i])===true){
-            return true;
-        }
-    }
-    return false;
+for(let i = 0; i <= 1000000; i++) { // 2. Накопичуємо суму
+  sum += i;
+function powRecursive(x, n) {
+  if(n === 1) {
+    return x;
+  } else {
+    return x * powRecursive(x, n - 1);
+  }
 }
 
+const time2 = new Date(); // відрізок часу ПІСЛЯ операції 2
+/*            if n === 1 -->> x
+            /
+powRecursive(x,n) = 
+            \
+              else --->> x * powRecursive(x, n - 1)
+*/
+
+console.log(sum); // 3. Консолимо накопичену суму
+// x^n = x * x^(n-1)
+
+console.log(time2.getTime() - time1.getTime()); // кількість затрачених мілісекунд на операцію 2
 /*
-Написати функцію, яка перевіряє, чи є переданий їй рядок - паліндромом. не зважаючи на регістр
-Паліндром - це коли рядок з обох сторін читається однаково
-Anna - паліндром
-Mama - не паліндром
-Namman - паліндром
+1. powRecursive(2, 4) --->>> 2 * powRecursive(2, 3)
+2. powRecursive(2, 3) --->>> 2 * powRecursive(2, 2)
+3. powRecursive(2, 2) --->>> 2 * powRecursive(2, 1)
+4. powRecursive(2, 1) --->>> 2
+// Приклад з консоль.таймами
 */
 
-function checkPalindrom(str){
-    const originalStr = str.toLowerCase();
-    const reversedStr = originalStr.split('').reverse().join('');
-    return originalStr === reversedStr;
+console.time('operation'); // Включили таймер
+/*
+let sum2 = 0;
+for(let i = 0; i <= 1000000; i++) { // 2. Накопичуємо суму
+  sum2 += i;
 }
+Особливості роботи:
+1. Рекурсія робить виклик функції простішим, потім ще більш простішим і так далі, доки результат не стане очевидним (досягнення бази рекурсії)
+2. Рекурсивне рішення, як правило, коротше ніж ітераційне
+*/
+
+// ......
+// Кількість вкладених викликів - глибина рекурсії
+
+console.timeEnd('operation');
+// Ми стремимся до того, що глибина рекурсії не має перевищувати 10000 викликів
