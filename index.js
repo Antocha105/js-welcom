@@ -1,87 +1,26 @@
-/*
-Задача: написати функцію, яка зводить число у певну ступінь і приймає 2 аргументи:
-- число, яке потрібно звести у ступінь    -- x
-- ступінь, у яку потрібно звести число    -- n
-*/
-
-// Ітеративне мислення: цикл for
-/* 
-function pow(x, n) {
-  let result = 1; // змінна у якій ми будемо накопичувати добуток
-Задача 1
-  // множимо result на x , n разів у циклі
-  for(let i = 0; i < n; i++) {
-    result *= x;
+class Animal{
+  constructor(nickname,color){
+    this.nickname = nickname;
+    this.color = color;
   }
 
-  return result;
-}
-Знайти факторіал числа
-console.log(pow(2, 3)); // 8
-5! = 5*4*3*2*1 = 120
-3! = 3*2*1
-7! = 7*6*5*4*3*2*1
-// Рекурсивне мислення: спрощуємо собі завдання і викликаємо функцією саму себе
-Задача 2 (*)
-function powRecursive(x, n) {
-  if(n === 1) {
-    return x;
-  } else {
-    return x * powRecursive(x, n - 1);
+  eat(){
+    return `${this.nickname} is eating`;
   }
+
+
 }
-Описати знаходження послідовності чисел Фібоначчі:
-F(n) = F(n-1) + F(n-2)
-/*            if n === 1 -->> x
-            /
-powRecursive(x,n) = 
-            \
-              else --->> x * powRecursive(x, n - 1)
-*/
-Іншими словами, наступне число є сумою двох попередніх.
-// x^n = x * x^(n-1)
-0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987....
-/*
-1. powRecursive(2, 4) --->>> 2 * powRecursive(2, 3)
-2. powRecursive(2, 3) --->>> 2 * powRecursive(2, 2)
-3. powRecursive(2, 2) --->>> 2 * powRecursive(2, 1)
-4. powRecursive(2, 1) --->>> 2
-0
-1
-1 -->> F(1) = 1 + 0 = 1
-2 -->> F(2) = 1 + 1 = 2
-3 -->> F(3) = 2 + 1 = 3
-5 -->> F(4) = 3 + 2 = 5
-8 -->> F(5) = 5 + 3 = 8
-*/
 
-/*
-// Задача 1
 
-Особливості роботи:
-1. Рекурсія робить виклик функції простішим, потім ще більш простішим і так далі, доки результат не стане очевидним (досягнення бази рекурсії)
-2. Рекурсивне рішення, як правило, коротше ніж ітераційне
-function findFactorial(number) {
-  if(number === 1) { // база рекурсії
-    return 1
-  } else {
-    return number * findFactorial(number - 1);
+class Dog extends Animal{
+  constructor(nickname,color,){
+    super(nickname,color)
+
+  }
+  
+  gav(){
+    return `${this.nickname} gav-gav-gav`;
   }
 }
 
-*/
-// Задача 2
-
-// Кількість вкладених викликів - глибина рекурсії
-function findFibonacci(n) {
-  if(n === 0) {
-    return 0;
-  }
-
-  if(n === 1) {
-    return 1;
-  }
-
-// Ми стремимся до того, що глибина рекурсії не має перевищувати 10000 викликів
-  return findFibonacci(n - 1) + findFibonacci(n - 2);
-} 
+const dog = new Dog('Tuzik','black')
