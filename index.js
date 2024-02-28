@@ -123,8 +123,48 @@ class Person{
       //variant3
       //return this.averageGrade>=90;
     }
+
+    static calculateAverageGrade(studentsArray){
+
+
+      /* Variant1
+      let sum=0
+      for(let i=0; i<studentArray.lenght;i++){
+        sum+=studentArray[i].averageGrade;
+      }
+      return sum/studentArray
+      */
+
+      //variant 2
+      /*
+      let sum=0;
+      studentArray.forEach((student) => {
+        sum+=student.averageGrade
+        
+      });
+
+      return sum/studentArray
+      */
+
+      /* variant3
+
+      const sum = studentsArray.reduce((accumulator, student)=>accumulator + student.averageGrade,0)
+
+      return sum/studentsArray.length
+      */
+
+      /*Variant4
+
+      return studentsArray.reduce((accumulator, student)=>accumulator + student.averageGrade,0)/studentsArray.lenght
+      */
+
+    }
+    
       
 
   }
 
+  const students =[student1,student2,student3,student4]
+
   const person = new Person('Ivanov Ivan Ivanovich',1985,'male')
+Student.calculateAverageGrade(students)
