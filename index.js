@@ -1,170 +1,94 @@
-class Person{
-  constructor(fullName,birthYear,gender){
-    this.fullName = fullName;
-    this.birthYear = birthYear;
-    this.gender = gender;
-
+ class Figure{
+  constructor(sideQuantity){
+    this.sideQuantity = sideQuantity;
   }
-//Setters
-  set fullName(value){
-    if(typeof value !=='string'){
-      throw new TypeError('Full name must be a string');
-    }
 
-    this._fullName = value
+  get sideQuantity(){
+    return this._sideQuantity
   }
-    set birthYear(value){
-      this._birthYear = value
 
+  set sideQuantity(newValue){
+    if(newValue<0){
+      throw new RangeError('Side quantity can be less than 0')
     }
-  set gender(value){
-    if(typeof value !==' string'){
-      throw new TypeError('Gender must be a string')
-    }
-
-    this._gender = value;
+    this._sideQuantity = newValue
   }
 
 
+  getArea(){
 
-//Getters
+  }
+ }
 
-    get fullName(){
-      return this._fullName
+class Triangle extends Figure{
+  constructor(a,b,angle){
+    super(3)
+    this.a =a;
+    this.b = b;
+    this.angle = angle
+  }
+
+  get a(){
+    return this._a
+  }
+
+  set a(newValue){
+    if(newValue<0){
+      throw new RangeError('Side not less than 0')
     }
-
-    get birthYear(){
-      return this._birthYear
-    }
-
-    get gender(){
-      return this._gender
-    }
-
-    //Methods
-
-    greeting(){
-      let prefix;
-
-      if(this.gender==='male'){
-        prefix = 'Mr'
-      }else if(this.gender==='female'){
-        prefix='mrs.'
-      }else{
-        prefix = prompt('How should we address you?');
-      }
-      return `Hello ${prefix} ${this.fullName}`
-
-    }
-
-
+    this._a = newValue
 
   }
 
-  class Student extends Person{
-    constructor(fullName,birthYear,gender,admisionYear,studentId,averageGrade){
-      super(fullName,birthYear,gender)
+  get b(){
+    return this._b
+  }
 
-      this.admisionYear = admisionYear;
-      this.studentId = studentId;
-      this.averageGrade = averageGrade
-
+  set b(newValue){
+    if(newValue<0){
+      throw new RangeError('Side not less than 0')
     }
+    this._b = newValue
 
-    //Setters
-    set admisionYear(value){
+  }
 
-      this._admisionYear = value;
+  get angle(){
+    return this.angle
+  }
+
+  set angle(newValue){
+    if(newValue<0){
+      throw new RangeError('Side not less than 0')
     }
+    this._angle = newValue
+  }
 
-    set studentId(value){
-      this._studentId = value
-    }
+  getArea(){
+    return this.a*this.b*Math.sin(this.angel);
+  }
+}
 
-    set averageGrade(value){
-      if(value>100||value<0){
-        throw new RangeError('Average grade must[0;100]')
-      }
-      if(typeof value !=='number'){
-        throw new TypeError('Average must be number')
-      }
-
-      this._averageGrade=value;
-    }
-
-
-    //Getters
-
-    get admisionYear(){
-      return this._admisionYear
-    }
-
-    get studentId(){
-      return this._studentId;
-    }
-
-    get averageGrade(){
-      return this._averageGrade
-    }
-
-    //Methods
-
-    isExellentStudent(){
-      //VAriant1
-      if(this.averageGrade >=90){
-        return true;
-      }else{
-        return false;
-      }
-
-      //Variant2
-      //const result = this.averageGrade>=90 ? true : false;
-
-      //variant3
-      //return this.averageGrade>=90;
-    }
-
-    static calculateAverageGrade(studentsArray){
-
-
-      /* Variant1
-      let sum=0
-      for(let i=0; i<studentArray.lenght;i++){
-        sum+=studentArray[i].averageGrade;
-      }
-      return sum/studentArray
-      */
-
-      //variant 2
-      /*
-      let sum=0;
-      studentArray.forEach((student) => {
-        sum+=student.averageGrade
-        
-      });
-
-      return sum/studentArray
-      */
-
-      /* variant3
-
-      const sum = studentsArray.reduce((accumulator, student)=>accumulator + student.averageGrade,0)
-
-      return sum/studentsArray.length
-      */
-
-      /*Variant4
-
-      return studentsArray.reduce((accumulator, student)=>accumulator + student.averageGrade,0)/studentsArray.lenght
-      */
-
-    }
+class Square extends Figure{
+  constructor(a){
+    super(4)
+    this.a = a;
     
-      
-
   }
 
-  const students =[student1,student2,student3,student4]
+  get a(){
+    return this._a
+  }
 
-  const person = new Person('Ivanov Ivan Ivanovich',1985,'male')
-Student.calculateAverageGrade(students)
+  set a(newValue){
+    if(newValue<0){
+      throw new RangeError('Side not less than 0')
+    }
+    this._a = newValue
+  }
+
+  getArea(){
+    return this.a*this.a
+  }
+}
+
+const square = new Square(4)
