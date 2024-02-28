@@ -92,3 +92,11 @@ class Square extends Figure{
 }
 
 const square = new Square(4)
+
+
+function getFigureArea(figure){
+  if(figure instanceof Figure){
+    return figure.getArea
+  }
+  throw new  TypeError('Параметр не є фігурою')
+}
