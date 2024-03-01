@@ -1,102 +1,88 @@
- class Figure{
-  constructor(sideQuantity){
-    this.sideQuantity = sideQuantity;
-  }
+/*
+function MyArray() {
+  this.length = 0;
 
-  get sideQuantity(){
-    return this._sideQuantity
-  }
-
-  set sideQuantity(newValue){
-    if(newValue<0){
-      throw new RangeError('Side quantity can be less than 0')
+  this.push = function (value) {
+  this.push = function () {
+    for(let i = 0; i < arguments.length; i++) {
+      this[this.length] = arguments[i];
+      this.length++;
     }
-    this._sideQuantity = newValue
+    return this.length;
   }
-
-
-  getArea(){
-
-  }
- }
-
-class Triangle extends Figure{
-  constructor(a,b,angle){
-    super(3)
-    this.a =a;
-    this.b = b;
-    this.angle = angle
-  }
-
-  get a(){
-    return this._a
-  }
-
-  set a(newValue){
-    if(newValue<0){
-      throw new RangeError('Side not less than 0')
+  this.pop = function() {
+    if(this.length > 0) {
+      // 1. Зберегти останній елемент
+      const lastItem = this[this.length - 1];
+      // 2. Видалити останній елемент з масиву
+      delete this[this.length - 1];
+      // 3. Зменшити довжину масиву на 1
+      this.length--;
+      // 4. Повернути останній елемент
+      return lastItem;
+    } else {
+      return undefined;
     }
-    this._a = newValue
-
   }
 
-  get b(){
-    return this._b
-  }
-
-  set b(newValue){
-    if(newValue<0){
-      throw new RangeError('Side not less than 0')
+  this.forEach = function(callback) {
+    // ?
+    for(let i = 0; i < this.length; i++) {
+      callback(this[i], i, this);
     }
-    this._b = newValue
-
-  }
-
-  get angle(){
-    return this.angle
-  }
-
-  set angle(newValue){
-    if(newValue<0){
-      throw new RangeError('Side not less than 0')
-    }
-    this._angle = newValue
-  }
-
-  getArea(){
-    return this.a*this.b*Math.sin(this.angel);
   }
 }
 
-class Square extends Figure{
-  constructor(a){
-    super(4)
-    this.a = a;
-    
+const arr = new MyArray();
+arr.push(1);
+arr.push(2);
+arr.push(3, 2, 5);
+
+// Відконсольлогувати квадрати кожного числа в масиві arr
+
+// Перепишіть push таким чином, щоб push міг приймати та додавав до масиву будь-яку кількість переданих елементів
+arr.push(3, 2, 5, 10, 12, 33);
+arr.forEach((item) => {
+  console.log(item ** 2);
+})
+
+*/
+
+class MyArray{
+  constructor(lenght){
+    this.lenght= 0;
   }
 
-  get a(){
-    return this._a
-  }
-
-  set a(newValue){
-    if(newValue<0){
-      throw new RangeError('Side not less than 0')
+  push(){
+    for(let i = 0; i < arguments.length; i++) {
+      this[this.length] = arguments[i];
+      this.length++;
     }
-    this._a = newValue
+    return this.lenght
+
   }
 
-  getArea(){
-    return this.a*this.a
+  pop(){
+    if(this.length > 0) {
+      // 1. Зберегти останній елемент
+      const lastItem = this[this.length - 1];
+      // 2. Видалити останній елемент з масиву
+      delete this[this.length - 1];
+      // 3. Зменшити довжину масиву на 1
+      this.length--;
+      // 4. Повернути останній елемент
+      return lastItem;
+    } else {
+      return undefined;
+    }
   }
+  
+  forEach(callback){
+    for(let i = 0; i < this.length; i++) {
+      callback(this[i], i, this);
+  }
+
+}
 }
 
-const square = new Square(4)
-
-
-function getFigureArea(figure){
-  if(figure instanceof Figure){
-    return figure.getArea
-  }
-  throw new  TypeError('Параметр не є фігурою')
-}
+const arr =  new MyArray()
