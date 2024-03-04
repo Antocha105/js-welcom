@@ -1,24 +1,37 @@
-class Queue{
-  constructor(){
-    this._head = 0;
-    this._tail = 0;
-  }
+/*
+Map - (карта, Мапа, словник) зберігає пари ключ-значення та має розмір
 
-  get size(){
-    return this._tail -  this._head
-  }
+Відмінності:
+1. Запамятовує елементи в тому порядку в якому ми їх додаємо
+2. Ключем може бути будь який тип даних
 
-  enqueue(value){
-    this[this._tail]=value;
-    this._tail++;
-    return this.size;
-  }
 
-  dequeue(){
-    const firstitem = this[this._head]=value;
-    delete this[this._head]
-    this._head++
-    return firstitem;
-  }
+Ключ в колекції меп має бути унікальним
 
+*/
+const map = new Map()
+
+map.set(1,{})
+map.set('1','value')
+map.get('1')//'value
+map.has(1)//true
+
+
+const vocalbuary = new Map();
+
+vocalbuary.set('cat','собака')
+vocalbuary.set('dog','собака')
+vocalbuary.set('eat','їсти')
+
+
+function translater(str,vocalbuary){
+  const arrayWords = str.toLowerCase().split(' ')
+  const translatedArray = arrayWords.map((word) => {
+    console.log(vocalbuary.get(word))
+    
+  });
+
+  return translatedArray.join(' ')
 }
+
+translater('Cat eat dog',vocalbuary)
