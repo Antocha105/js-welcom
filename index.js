@@ -1,17 +1,16 @@
-const schedule = new Map();
+const set = new Set();
 
-schedule.set('Понеділок',['Математика','физика'])
-schedule.set('Вівторок',['Алгебра','Геометрія'])
-schedule.set('Середа',['Англійська мова','Фізкультура'])
-schedule.set('Четвер',['Праця','укр.мова'])
-schedule.set('пятниця',['Література','фізра'])
+set.add(1);
+set.add(4);
+set.add('Hello');
 
 
-//Отримання розкладу занять для певного дня
-console.log(schedule.get('Понеділок'))
+console.log(set.has(1)) //true
+console.log(set.has(12)) //false
 
-//Перевірка чи є розклад для певного дня
-console.log(schedule.has('сУБОТА'))
+set.delete('Hello')
 
-//оТРИМАННЯ КІЛЬКОСТІ ЗАНЯТЬ В розкладі
-console.log(schedule.size);
+
+const valuesIterator = set.values()
+
+const arrayFromSet  = [...set.values()]
