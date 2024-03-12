@@ -18,12 +18,12 @@ const monitor = {
     resolution:'4K'
 }
 
-
+/*
 //const height = monitor.sizes.height.value
 
 //const {resolution} = monitor
 
-console.log(resolution)
+//console.log(resolution)
 
 const {color: monitorColor} = monitor;
 
@@ -37,3 +37,46 @@ console.log(heightScale)
 console.log(widthScale)
 
 const{color, brightnass,resolution, ...restOfMonitor} = monitor
+*/
+const user = {
+    name:'John',
+    age: 33,
+    adress:{
+        city: 'Kyev',
+        country:'Ukraine'
+    },
+    contacts:{
+        email:'john@email.com',
+        phone:'+380990973451'
+    }
+}
+
+const {name, adress:{city}, contacts:{phone}} = user
+
+console.log(name)
+console.log(city)
+console.log(phone)
+
+
+
+const arr = [1,2,3,4,5,6]
+
+const[firstElement,secondElement]= arr;
+
+
+//old sintax
+
+function getFullName ({firstName, lastName,...restObj}){
+    return `${firstName} ${lastName}`
+}
+
+
+const user2 ={
+    firstName:'John',
+    lastName:'Doe',
+    age:42,
+    geolocation:'56365432465',
+    brouwser:'crome'
+}
+
+getFullName(user2)
